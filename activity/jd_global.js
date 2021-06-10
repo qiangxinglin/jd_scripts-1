@@ -44,8 +44,7 @@ if ($.isNode()) {
 
 const JD_API_HOST = 'https://api.m.jd.com/', actCode = 'visa-card-001';
 const inviteCodes = [
-  'WmpHM2pndWh3OFphS2NsbTRLMmhqZz09@M3ozUGw0eExUZ25hSHBTZ2pJcTdpZz09@S2tETnZ0REtONy9Dc2Nqek1KNXpmWHFTNnF3OUtQQjJKZmJ2YUtSS3BQTT0=@a1RrenU1WExQaXRWS3VIZHgwMjlUYzJSeHhVMDlvZXgxR2RsdkZkRXZnOD0=@bHNsOVFIL2tQRTJhSndpRVNHVTlheXJLbzZRK09HaUtidjJUUFNQRXdqbz0=@M0JxTFVEbmxtV05uQWJVQVdyL2NxeTcycG1lcWtEbzVOc283bjR2MklkWT0=',
-  'a1RrenU1WExQaXRWS3VIZHgwMjlUYzJSeHhVMDlvZXgxR2RsdkZkRXZnOD0=@bHNsOVFIL2tQRTJhSndpRVNHVTlheXJLbzZRK09HaUtidjJUUFNQRXdqbz0=@WmpHM2pndWh3OFphS2NsbTRLMmhqZz09@M3ozUGw0eExUZ25hSHBTZ2pJcTdpZz09@S2tETnZ0REtONy9Dc2Nqek1KNXpmWHFTNnF3OUtQQjJKZmJ2YUtSS3BQTT0=',
+  'eHBLRXViTmo3bWZjLy9kRmNuSmxwQWhPQ3ozUGc1RzBrWEt4b3c1dC92QT0=@L3lYREpSWHZtT1NNVW1OSkxTZ1kvSmliZ0NnZzdZNU5QenM2bG0vN2hiND0=@SGNkb2ZuRmo2ZTVmVW5VdTFvT2hYZz09@ajkwSjZsblZpYzFXS00wWTFDTmhqQT09@NHR1YnpkY09WanB3VjRwVCtVMld5dz09@RTB5MHhzLzRyYnIwQzVQOUFsTXk1Zz09@VUFnSkZrbEFCRjF3NnFtSzliVzVwcHhwSGsxSVRPQ2orMUQ3Tldidzk1dz0=@Z2ZEQk1sOFg5Y1h5Y2hsL2VIN0hGUT09'
 ];
 $.invites = [];
 !(async () => {
@@ -347,7 +346,7 @@ function shareCodesFormat() {
       const tempIndex = $.index > inviteCodes.length ? (inviteCodes.length - 1) : ($.index - 1);
       $.newShareCodes = inviteCodes[tempIndex].split('@');
     }
-    const readShareCodeRes = await readShareCode();
+    const readShareCodeRes = null // await readShareCode();
     if (readShareCodeRes && readShareCodeRes.code === 200) {
       $.newShareCodes = [...new Set([...$.newShareCodes, ...(readShareCodeRes.data || [])])];
     }
